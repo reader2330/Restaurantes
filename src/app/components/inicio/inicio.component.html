@@ -1,0 +1,27 @@
+<app-navbar></app-navbar>
+
+<section id="tabs" class="col-sm-12" style="height: 1200px;">
+  <div class="container">
+    <h6 class="section-title h1">Crud Restaurantes</h6>
+    <div class="row">
+      <div class="col-xs-12 ">
+        <nav>
+          <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link active" [ngClass]="{active: state === 1 }" id="nav-home-tab" data-toggle="tab" (click)="goTap(1)" role="tab">Home</a>
+            <a class="nav-item nav-link " [ngClass]="{active: state === 2 }" id="nav-profile-tab" data-toggle="tab"  role="tab" (click)="goTap(2)"  >Profile</a>
+
+          </div>
+        </nav>
+        <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+          <div *ngIf="state === 1" class="tab-pane fade show active" [ngClass]="{show: state === 1, active: state === 1 }" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+            <app-mapa></app-mapa>
+          </div>
+          <div *ngIf="state === 2" class="tab-pane fade" [ngClass]="{show: state === 2, active: state === 2 }" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+            <app-create (responseChildren)="responseChildren($event)"></app-create>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

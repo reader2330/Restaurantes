@@ -1,0 +1,57 @@
+@import ../../sass/variables
+@import ../../sass/layouts
+
+#full
+  background: linear-gradient($primary, $accent, $warn)
+  height: 1300px
+  max-height: 1400px
+
+.radius
+  @include borderRadius(10px)
+  opacity: 1
+
+.icons
+  background-color: $warn
+  color: white
+
+
+.p-50
+  @include paddingSize(50px)
+
+.p-30
+  padding: 80px 0 0 30px
+  box-shadow: 1px 1px transparent
+.portada
+  width: 100%
+  height: 100%
+  margin: 0
+  padding: 0
+
+
+.card2
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2)
+  transition: 0.3s
+
+
+.card2:hover
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2)
+
+
+
+
+
+
+.title
+  text-transform: capitalize
+  font-family: Roboto, serif
+  font-weight: 500
+
+.btn-primary
+  background-color: $primary
+  border: 1px solid $primary
+
+.btn-warn
+  background-color: $accent
+  border: 1px solid $accent
+  color: whitesmoke
+

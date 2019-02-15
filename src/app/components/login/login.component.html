@@ -1,0 +1,33 @@
+<div class="container-fluid p-30 " id="full">
+   <div class="row col-sm-12 col-md-6 offset-md-4">
+     <div class="card radius">
+       <img [src]="img"  class="card-img-top"  alt="">
+       <div class="card-body p-50" [formGroup]="LoginForm">
+         <h2 align="center" class="mb-3">Iniciar sesión</h2>
+         <div class="input-group mb-3">
+           <div class="input-group-prepend">
+             <span class="input-group-text icons" id="basic-addon1"><i class="fa fa-user-circle-o" aria-hidden="true"></i></span>
+           </div>
+           <input type="email" class="form-control" formControlName="email" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1"  [ngClass]="{ 'is-invalid': f.email.dirty && f.email.errors  }" required>
+           <div *ngIf="f.email.errors" class="invalid-feedback">
+             <div *ngIf="f.email.errors.required">Email es requerido</div>
+             <div *ngIf="f.email.errors.email">El formato del correo debe ser 'hola@hola.com'</div>
+           </div>
+         </div>
+         <div class="input-group mb-0">
+           <div class="input-group-prepend">
+             <span class="input-group-text icons" id="basic-addon2"><i class="fa fa-key" aria-hidden="true"></i></span>
+           </div>
+           <input type="password" class="form-control" formControlName="password" placeholder="Contraseña" aria-label="contraseña" [ngClass]="{ 'is-invalid': f.password.dirty && f.password.errors  }" aria-describedby="basic-addon1" required>
+           <div *ngIf="f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required">Contraseña es requerida</div>
+           </div>
+         </div>
+         <div class="row justify-content-center">
+           <button class="btn btn-primary mt-3" (click)="onLogin()" [disabled]="!LoginForm.valid"><i class="fa fa-sign-in m-1" aria-hidden="true"></i>Ingresar</button>
+           <button class="btn btn-warn mt-3 ml-2" (click)="goRegister()"><i class="fa fa-user-plus m-1" aria-hidden="true"></i>Registrar</button>
+         </div>
+       </div>
+     </div>
+    </div>
+</div>
